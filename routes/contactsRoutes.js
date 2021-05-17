@@ -18,14 +18,14 @@ route.get("/" , (req,res) => {
 });
 
 route.get("/:idcontact" , (req,res) => {
-    const contact = req.params.idcontact;
-    Contact.findById({ idcontact} , (err,data)=> {
+    const idcontact = req.params.idcontact;
+    Contact.findById({ idcontact } , (err,data)=> {
         res.json(data)
     });
 });
 
 route.delete("/:idcontact", (req,res) =>{
-    const contact = req.params.idcontact;
+    const idcontact = req.params.idcontact;
     Contact.findByIdAndDelete(idcontact , (err,data)=> {
         res.send(data)
     });
